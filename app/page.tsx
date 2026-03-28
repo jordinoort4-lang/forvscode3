@@ -1,3 +1,3 @@
-﻿export default function HomePage() {
-  return <h1>Time Clock PWA is running</h1>;
+﻿export default function Home() {
+  return <h1>Hello World</h1>;
 }
