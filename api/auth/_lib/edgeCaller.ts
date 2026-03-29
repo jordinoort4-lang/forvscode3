@@ -1,4 +1,4 @@
-import { signBody } from '@/app/lib/hmac';
+import { signBody } from '@/lib/hmac';
 
 export async function callEdge(actionPath: string, bodyObj: any) {
   const EDGE_BASE = process.env.SUPABASE_EDGE_FUNCTIONS_URL;

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#14b8a6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="64" fill="url(#grad)"/>
+  <g fill="white">
+    <!-- Chart icon -->
+    <rect x="128" y="266" width="64" height="160" rx="8"/>
+    <rect x="224" y="186" width="64" height="240" rx="8"/>
+    <rect x="320" y="106" width="64" height="320" rx="8"/>
+    <!-- Arrow up -->
+    <path d="M384 133 L426 186 L405 186 L405 240 L363 240 L363 186 L342 186 Z"/>
+  </g>
+</svg>

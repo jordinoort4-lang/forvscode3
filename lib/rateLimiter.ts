@@ -28,7 +28,13 @@ function emailKey(email: string, bucket: 'minute' | 'hour' | 'week' | 'cooldown'
 }
 
 export async function checkAndConsume(email: string): Promise<RateCheckResult> {
-  const redis = getRedis();
+  let redis;
+  try {
+    redis = getRedis();
+  } catch (error) {
+    console.error('Redis connection error:', error);
+    throw new Error('Rate limiter unavailable');
+  }
   const now = Math.floor(Date.now() / 1000);
 
   const cooldownKey = emailKey(email, 'cooldown');
@@ -59,7 +65,16 @@ export async function checkAndConsume(email: string): Promise<RateCheckResult> {
   pipe.expire(hourKey, HOUR_WINDOW);
   pipe.incr(weekKey);
   pipe.expire(weekKey, WEEK_WINDOW);
-  const [rMinuteRaw, , rHourRaw, , rWeekRaw] = await pipe.exec() as Array<any>;
+  const results = await pipe.exec();
+  if (!results) {
+    throw new Error('Redis pipeline execution failed');
+  }
+  // Check for errors in pipeline results
+  const hasError = results.some(([err]) => err !== null);
+  if (hasError) {
+    throw new Error('Redis pipeline command failed');
+  }
+  const [rMinuteRaw, , rHourRaw, , rWeekRaw] = results;
 
   const rMinute = parseInt(rMinuteRaw[1], 10);
   const rHour = parseInt(rHourRaw[1], 10);

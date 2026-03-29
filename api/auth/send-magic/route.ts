@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { checkAndConsume } from '@/app/lib/rateLimiter';
+import { checkAndConsume } from '@/lib/rateLimiter';
 import { callEdge } from '../_lib/edgeCaller';
 
 export async function POST(req: Request) {
