@@ -2,6 +2,9 @@
 import './globals.css';
 import { SupabaseAuthProvider } from './components/SupabaseAuthProvider';
 
+// This forces Next.js to dynamically render the route, preventing build-time pre-render crashes
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'OSM Advisor - Tactical Analysis & Advisory Tool',
   description: 'Professional tactical analysis and advisory application for Online Soccer Manager players. Get 1 free calculation every week!',
