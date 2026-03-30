@@ -84,7 +84,7 @@ self.__SERVER_FILES_MANIFEST={
     "productionBrowserSourceMaps": false,
     "excludeDefaultMomentLocales": true,
     "reactProductionProfiling": false,
-    "reactStrictMode": true,
+    "reactStrictMode": null,
     "reactMaxHeadersLength": 6000,
     "httpAgentOptions": {
       "keepAlive": true
@@ -104,7 +104,7 @@ self.__SERVER_FILES_MANIFEST={
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "c:\\Users\\windows developing\\Documents",
+    "outputFileTracingRoot": "C:\\Users\\windows developing\\Documents",
     "cacheComponents": false,
     "cacheLife": {
       "default": {
@@ -220,9 +220,6 @@ self.__SERVER_FILES_MANIFEST={
       "turbopackFileSystemCacheForBuild": false,
       "turbopackInferModuleSideEffects": true,
       "turbopackPluginRuntimeStrategy": "childProcesses",
-      "serverActions": {
-        "bodySizeLimit": "2mb"
-      },
       "optimizePackageImports": [
         "lucide-react",
         "date-fns",
@@ -307,11 +304,11 @@ self.__SERVER_FILES_MANIFEST={
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.js",
     "turbopack": {
-      "root": "c:\\Users\\windows developing\\Documents"
+      "root": "C:\\Users\\windows developing\\Documents"
     },
     "distDirRoot": ".next"
   },
-  "appDir": "c:\\Users\\windows developing\\Documents\\app",
+  "appDir": "C:\\Users\\windows developing\\Documents\\app",
   "relativeAppDir": "app",
   "files": [
     ".next\\routes-manifest.json",
