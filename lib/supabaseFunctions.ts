@@ -1,6 +1,7 @@
-import { getSupabase } from './supabase';
+﻿import { getSupabase } from './supabase';
 
-const FN_BASE = '/functions/v1';
+const FN_BASE = process.env.SUPABASE_EDGE_FUNCTIONS_URL;
+if (!FN_BASE) throw new Error('SUPABASE_EDGE_FUNCTIONS_URL not set');
 
 async function getAccessToken() {
   const supabase = getSupabase();
